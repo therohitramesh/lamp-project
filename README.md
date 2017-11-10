@@ -9,7 +9,7 @@ A -> Apache
 M -> MySQL
 P -> PHP
 ```
-It is an FBI database having :
+It is an FBI database having:
 * Login/sign up feature
 * Agents have only search and view access
-* Admins have access to search, view as well as edit
+* Admins have access to search, view, as well as edit
