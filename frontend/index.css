@@ -1,0 +1,29 @@
+#header {
+height: 200px;
+background-color: silver;
+border: 1px black solid;
+}
+
+#body {
+height: 800px;
+border: 1px black solid;
+}
+
+#footer {
+height: 200px;
+background-color: silver;
+border: 1px black solid;
+}
+
+#pname {
+width: 50%;
+display: inline-block;
+border: 1px black solid;
+height: 
+}
+
+#logo {
+width: 30%;
+display: inline-block;
+border: 1px black solid;
+}
