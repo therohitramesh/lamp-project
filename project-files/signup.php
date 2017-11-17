@@ -8,8 +8,11 @@
 		<link rel="fav icon" href="images/FBIicon.ico" type="image/x-icon">
 		  <link rel="stylesheet" href="css/style.css">
 		  <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+		  <link rel="stylesheet" type="text/css" src="fonts//home/rohitramesh/version-control/lamp-project/project-files/fonts/TypoWriter Light Demo.otf">
   <style type="text/css">
-    
+    body{
+    	color: white;
+    }
     .header{
     	font-size: 50px;
     }
@@ -101,9 +104,9 @@
 		  	<label for="date">Date of Birth:</label>
 		  	<input type="date" name="date" class="form-control">	  		
   		  </div>
-
+  		  <br><br>
   		  <div class="col-md-12">
-  		  	<button type="submit" class="btn btn-primary">Get Me Registered</button>
+  		  	<button type="submit" class="btn btn-primary" style="color: black;">Register</button>
   		  </div>
 		</form> 
 		<div class="col-md-4" style="text-align: center; color: red"><?php
@@ -119,8 +122,8 @@
 	</div>
   </div>
     
-	<script src="https://code.jquery.com/jquery-2.1.4.js"></script>
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+	<!-- <script src="https://code.jquery.com/jquery-2.1.4.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script> -->
 </body>
 </html>
 
