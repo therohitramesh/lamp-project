@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>FBI-Homepage</title>
+		<title>FBI - Homepage</title>
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -9,7 +9,7 @@
 		  <link rel="stylesheet" href="css/style.css">
 		  <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
 	<style type="text/css">
-    
+
     .jumbotron {
       color: #2c3e50;
       background: #ecf0f1;
@@ -18,7 +18,7 @@
 		font-size: 50px;
 	}
     .navbar-inverse {
-      background: #2c3e50;
+      background: black;
       color: white;
     }
     .navbar-inverse .navbar-brand, .navbar-inverse a{
@@ -26,7 +26,7 @@
     }
     .navbar-inverse .navbar-nav>li>a {
       color: white;
-    } 
+    }
 
   </style>
 </head>
@@ -68,7 +68,7 @@
 					<div class="col-md-12">
 						<h1><b>FBI</b></h1>
 						<h5><b>The official site.</b></h5>
-					</div>	
+					</div>
 				</div>
 			</div>
 			<div class="footer">
