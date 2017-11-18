@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>FBI - Register</title>
+	<title>FBI - Log In</title>
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -37,6 +37,9 @@
 	<div class="container"></div>
 	<div class="image"></div>
 	<div class="row">
+		<div class="col-md-4"></div>
+
+		<div class="col-md-4"></div>
 	</div>
 	<nav class="navbar navbar-inverse navbar-fixed-top">
 		<div class="container">
@@ -47,7 +50,7 @@
 	        <span class="icon-bar"></span>
 	        <span class="icon-bar"></span>
 	      </button>
-				<a href="index.php" class="navbar-brand">FBI</a>
+				<a href="index.php" class="navbar-brand"><span class="glyphicon glyphicon-picture"></span> FBI</a>
 			</div>
 			<div class="collapse navbar-collapse" id="bs-nav-demo">
 				<ul class="nav navbar-nav">
@@ -63,45 +66,31 @@
 	</nav>
 
   <div class="container">
-  	<div class="container-fluid content">
 	<div class="header">
 		<div class="col-md-12">
-			<h1><b>Register</b></h1>
+			<h1><b>Log In</b></h1>
 		</div>
 	</div>
 	<div>
-
-	    <form action="action_signup.php" method="POST">
+		<form action="action_login.php" method="POST">
+			<div class="form-group row">
 	      <div class="form-group col-md-6">
-		  	<label for="first">First Name:</label>
-	      	<input type="text" name="first-name" id="first-name" required placeholder="John" class="form-control">
-		  </div>
-		  <div class="form-group col-md-6">
-		  	<label for="last">Last Name:</label>
-	      	<input type="text" name="last-name" id="last-name" required placeholder="Doe" class="form-control">
-		  </div>
-	      <div class="form-group col-md-6">
-		    <label for="agentid">Agent ID:</label>
+		    	<label for="agentid">Agent ID:</label>
       		<input type="text" name="agentid" id="agentid" required placeholder="XXXXXX" class="form-control" maxlength="6">
-		  </div>
-		  <div class="form-group col-md-6">
-		    <label for="dept">Department Code:</label>
-      		<input type="text" name="dept" id="dept" required placeholder="ABC" class="form-control">
-		  </div>
-		  <div class="form-group col-md-6">
-		    <label for="pass">Password:</label>
-		    <input type="password" class="form-control" id="pass" name="password" placeholder="Password" pattern=".{5,10}" title="5 to 10 characters">
-		  </div>
-		  <div class="form-group col-md-6">
-		    <label for="confirm-pass">Confirm Password:</label>
-		    <input type="password" class="form-control" id="confirm-pass" placeholder="Password" pattern=".{5,10}" title="5 to 10 characters">
-		  </div>
-  		  <br><br>
+		  	</div>
+			</div>
+			<div class="form-group row">
+		  	<div class="form-group col-md-6">
+		    	<label for="pass">Password:</label>
+		    	<input type="password" class="form-control" id="pass" name="password" placeholder="Password" pattern=".{5,10}" title="5 to 10 characters">
+		  	</div>
+			</div>
+				<br><br>
   		  <div class="col-md-12">
-  		  	<button type="submit" class="btn btn-primary" style="color: black;">Register</button>
+  		  	<button type="submit" class="btn btn-primary" style="color: black;">Log In</button>
   		  </div>
 		</form>
-		<div class="col-md-4" style="text-align: center; color: red"><?php
+		<div class="col-md-4" style="text-align: center; color: green"><?php
 		session_start();
 		if(isset($_SESSION['msg']))
 		{
@@ -114,8 +103,37 @@
 	</div>
   </div>
 
-
 	<!-- <script src="https://code.jquery.com/jquery-2.1.4.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script> -->
 </body>
 </html>
+
+
+<?php
+      $con= mysqli_connect("127.0.0.1","root","kevalkale1","invictus")or     die("Could not connect: " . mysql_error());
+
+      $sql="SELECT * FROM event WHERE 1";
+
+
+      $result=mysqli_query($con,$sql);
+      $count=mysqli_num_rows($result);
+
+
+
+
+      while($temp = mysqli_fetch_array( $result ))
+      {
+        $link = "http://localhost/ST/registration.php/?event=";
+        $link = $link. "" .$temp['event'];
+        $src = $temp['poster'];
+
+        
+        echo "<div class='col-lg-4 col-sm-6'><p><img src='$src'  alt = 'pic'></img>";
+        echo "<br><br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<a href = '$link'><button type='button' class='btn btn-primary'>".$temp['event']."</button></a>";
+        echo "</p></div>";
+        echo "";
+        
+      }
+
+
+  ?>

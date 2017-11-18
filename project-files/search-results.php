@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>FBI - Log In</title>
+	<title>FBI</title>
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -68,29 +68,10 @@
   <div class="container">
 	<div class="header">
 		<div class="col-md-12">
-			<h1><b>Log In</b></h1>
+			<h1><b>Criminal Records</b></h1>
 		</div>
 	</div>
-	<div>
-		<form action="action_login.php" method="POST">
-			<div class="form-group row">
-	      <div class="form-group col-md-6">
-		    	<label for="mobile">Agent ID:</label>
-      		<input type="text" name="agentid" id="mobile" required placeholder="XXXXXX" class="form-control" maxlength="6">
-		  	</div>
-			</div>
-			<div class="form-group row">
-		  	<div class="form-group col-md-6">
-		    	<label for="pass">Password:</label>
-		    	<input type="password" class="form-control" id="pass" name="password" placeholder="Password" pattern=".{5,10}" title="5 to 10 characters">
-		  	</div>
-			</div>
-				<br><br>
-  		  <div class="col-md-12">
-  		  	<button type="submit" class="btn btn-primary" style="color: black;">Log In</button>
-  		  </div>
-		</form>
-		<div class="col-md-4" style="text-align: center; color: red"><?php
+	<div class="col-md-4" style="text-align: center; color: green"><?php
 		session_start();
 		if(isset($_SESSION['msg']))
 		{
@@ -98,12 +79,45 @@
 			unset($_SESSION['msg']);
 		}
 		?>
-		</div>
 	</div>
-	</div>
-  </div>
-
 	<!-- <script src="https://code.jquery.com/jquery-2.1.4.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script> -->
+
+<?php
+      $con= mysqli_connect("127.0.0.1","root","mynameisrohit","fbi")or     die("Could not connect: " . mysql_error());
+
+      $criminalid = [`criminalid`];
+
+      $sql="SELECT * FROM `fbi-criminals` WHERE `criminalid`=$criminalid";
+
+
+      $result=mysqli_query($con,$sql);
+      
+      while($temp = mysqli_fetch_array( $result ))
+      {
+        $link = "http://localhost/lamp-project/project-files/.php/?event=";
+        $criminalid = $temp['crimnalid'];
+        $name = $temp['name'];
+        $crime_comm = $temp['crime-comm'];
+        $area = $temp['area'];
+        $year = $temp['year'];
+        $src = $temp['img'];
+
+        echo "<div class='col-md-12'>
+        		<div class='row'>
+        			<img class=criminalimg src=$src alt='criminal image' style='float:left;'></img>
+        			<div class='info'>
+        				Criminal ID : $crminalid<br>
+        				Name : $name<br>
+        				Crime Committed : $crime_comm<br>
+        				Area : $area<br>
+        				Year : $year<br>
+      				</div>
+      			</div>
+      		</div>"
+      }
+?>
+</div>
 </body>
 </html>
+

@@ -9,11 +9,6 @@
 		  <link rel="stylesheet" href="css/style.css">
 		  <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
 	<style type="text/css">
-
-    .jumbotron {
-      color: #2c3e50;
-      background: #ecf0f1;
-	}
 	.header{
 		font-size: 50px;
 	}
