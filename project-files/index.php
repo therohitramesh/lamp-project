@@ -1,17 +1,22 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<title>FBI - Homepage</title>
+<head>
+	<title>FBI - Homepage</title>
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<link rel="fav icon" href="images/FBIicon.ico" type="image/x-icon">
 		  <link rel="stylesheet" href="css/style.css">
 		  <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
-	<style type="text/css">
-	.header{
-		font-size: 50px;
-	}
+		  <link rel="stylesheet" type="text/css" href="css/bootstrap-theme.min.css">
+		  <link rel="stylesheet" type="text/css" src="fonts//home/rohitramesh/version-control/lamp-project/project-files/fonts/TypoWriter Light Demo.otf">
+  <style type="text/css">
+    body{
+    	color: white;
+    }
+    .header{
+    	font-size: 50px;
+    }
     .navbar-inverse {
       background: black;
       color: white;
@@ -22,13 +27,37 @@
     .navbar-inverse .navbar-nav>li>a {
       color: white;
     }
+    input.transparent-input{
+       background-color:transparent !important;
+       border:none !important;
+    }
 
+		.norm {
+			width: 350px;
+			height: 250px;
+			background-color: rgba(0, 0, 0, 0.0);
+
+		}
+
+		.content {
+			margin-top: 64px;
+			background-color: rgba(0, 0, 0, 0.5);
+		}
+
+		.center {
+			text-align: center;
+		}
   </style>
-</head>
-	<body>
-		<div class="container">
-		<div class="image"></div>
 
+</head>
+<body>
+	<div class="container"></div>
+	<div class="image"></div>
+	<div class="row">
+		<div class="col-md-4"></div>
+
+		<div class="col-md-4"></div>
+	</div>
 	<nav class="navbar navbar-inverse navbar-fixed-top">
 		<div class="container">
 			<div class="navbar-header">
@@ -52,23 +81,33 @@
 		</div>
 	</nav>
 
-		<div class="container">
-			<div id="body">
-				<!-- <div class="jumbotron">
-				  <h1 class="display-4">FBI</h1>
-				  <p class="lead">FEDEREAL BUREAU OF INVESTIGATION</p>
-				</div> -->
-				<div class="header">
-					<div class="col-md-12">
-						<h1><b>FBI</b></h1>
-						<h5><b>The official site.</b></h5>
-					</div>
-				</div>
+		<div class="container content">
+
+		<div class="header">
+
+			<div class="col-md-12">
+				<h1>FBI</h1>
+				<p>What would you like to do?</p>
+
+				<p class="center">
+				  <button type="button" class="btn norm">Log In</button>
+					<button type="button" class="btn norm">Register</button>
+					<button type="button" class="btn norm">Most Wanted</button>
+				</p>
+				<p class="center">
+				  <button type="button" class="btn norm">Contact Us</button>
+					<button type="button" class="btn norm">Register</button>
+					<button type="button" class="btn norm">Most Wanted</button>
+				</p>
 			</div>
-			<div class="footer">
-            	<p>© 2017 All rights reserved by FBI</p>
-          </div>
+
+			</div>
 		</div>
-	</div>
-	</body>
+
+
+
+
+	<!-- <script src="https://code.jquery.com/jquery-2.1.4.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script> -->
+</body>
 </html>
