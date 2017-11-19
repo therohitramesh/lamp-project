@@ -1,6 +1,5 @@
 *{
 	font-family: 'Dosis', sans-serif;
-  font-family: 'Special Elite', cursive;
 	/*border: 1px solid red;*/
 	-webkit-box-sizing: border-box;
 	-moz-box-sizing: border-box;
@@ -11,6 +10,7 @@
 
 .content{
       background-color: rgba(0,0,0,0.5);
+      margin-top: 64px;
     }
 
 
@@ -39,9 +39,8 @@ vertical-align: middle;
 #body {
 height: 800px;
 }
-
-.jumbotron{
-	color: black;
+.btn{
+  text-decoration: none;
 }
 
 #logo{

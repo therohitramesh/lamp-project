@@ -7,13 +7,14 @@ $agentid=$_POST['agentid'];
 $password=$_POST['password'];
 
 $sql="SELECT * FROM `fbi-users` WHERE `agentid`='$agentid' and `password`='$password'";
-$admin="SELECT `admin` FROM `fbi-users` WHERE `agentid`=`$agentid` and `password`=`$password`";
+// $admin="SELECT `admin` FROM `fbi-users` WHERE `agentid`=`$agentid` and `password`=`$password`";
 
 
 $result=mysqli_query($con,$sql);
 $count=mysqli_num_rows($result);
 
 $temp = mysqli_fetch_array( $result );
+$admin = $temp['admin'];
 
 if($count == 0)
 {

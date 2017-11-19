@@ -9,8 +9,8 @@
 		  <link rel="stylesheet" href="css/style.css">
 		  <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
 		  <link rel="stylesheet" type="text/css" href="css/bootstrap-theme.min.css">
-		  <link rel="stylesheet" type="text/css" src="fonts//home/rohitramesh/version-control/lamp-project/project-files/fonts/TypoWriter Light Demo.otf">
-  <style type="text/css">
+	
+<style type="text/css">
     body{
     	color: white;
     }
@@ -32,16 +32,11 @@
        border:none !important;
     }
 
-		.norm {
-			width: 350px;
-			height: 250px;
-			background-color: rgba(0, 0, 0, 0.0);
+	.norm {
+		width: 350px;
+		height: 250px;
+		background-color: rgba(0, 0, 0, 0.0);
 
-		}
-
-		.content {
-			margin-top: 64px;
-			background-color: rgba(0, 0, 0, 0.5);
 		}
 
 		.center {
@@ -90,14 +85,14 @@
 				<p>What would you like to do?</p>
 
 				<p class="center">
-				  <button type="button" class="btn norm">Log In</button>
-					<button type="button" class="btn norm">Register</button>
-					<button type="button" class="btn norm">Most Wanted</button>
+				  	<a href="login.php"><button type="button" class="btn norm">Log In</button></a>
+					<a href="signup.php"><button type="button" class="btn norm">Register</button></a>
+					<button type="button" class="btn norm">HQ</button>
 				</p>
 				<p class="center">
-				  <button type="button" class="btn norm">Contact Us</button>
-					<button type="button" class="btn norm">Register</button>
-					<button type="button" class="btn norm">Most Wanted</button>
+				  	<a href="contact.php"><button type="button" class="btn norm">Contact Us</button></a>
+					<a href="created.php"><button type="button" class="btn norm">Created By</button></a>
+					<a href="about.php"><button type="button" class="btn norm">About Us</button></a>
 				</p>
 			</div>
 
