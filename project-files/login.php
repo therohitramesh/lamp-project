@@ -75,8 +75,8 @@
 		<form action="action_login.php" method="POST">
 			<div class="form-group row">
 	      <div class="form-group col-md-6">
-		    	<label for="agentid">Agent ID:</label>
-      		<input type="text" name="agentid" id="agentid" required placeholder="XXXXXX" class="form-control" maxlength="6">
+		    	<label for="mobile">Agent ID:</label>
+      		<input type="text" name="agentid" id="mobile" required placeholder="XXXXXX" class="form-control" maxlength="6">
 		  	</div>
 			</div>
 			<div class="form-group row">
@@ -90,7 +90,7 @@
   		  	<button type="submit" class="btn btn-primary" style="color: black;">Log In</button>
   		  </div>
 		</form>
-		<div class="col-md-4" style="text-align: center; color: green"><?php
+		<div class="col-md-4" style="text-align: center; color: red"><?php
 		session_start();
 		if(isset($_SESSION['msg']))
 		{
@@ -107,33 +107,3 @@
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script> -->
 </body>
 </html>
-
-
-<?php
-      $con= mysqli_connect("127.0.0.1","root","kevalkale1","invictus")or     die("Could not connect: " . mysql_error());
-
-      $sql="SELECT * FROM event WHERE 1";
-
-
-      $result=mysqli_query($con,$sql);
-      $count=mysqli_num_rows($result);
-
-
-
-
-      while($temp = mysqli_fetch_array( $result ))
-      {
-        $link = "http://localhost/ST/registration.php/?event=";
-        $link = $link. "" .$temp['event'];
-        $src = $temp['poster'];
-
-        
-        echo "<div class='col-lg-4 col-sm-6'><p><img src='$src'  alt = 'pic'></img>";
-        echo "<br><br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<a href = '$link'><button type='button' class='btn btn-primary'>".$temp['event']."</button></a>";
-        echo "</p></div>";
-        echo "";
-        
-      }
-
-
-  ?>

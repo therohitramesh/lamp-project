@@ -30,35 +30,14 @@
        background-color:transparent !important;
        border:none !important;
     }
-    input[type=text] {
-    width: 100px;
-    box-sizing: border-box;
-    border: 2px solid #ccc;
-    border-radius: 4px;
-    font-size: 16px;
-    background-color: white;
-    background-image: url('searchicon.png');
-    background-position: 10px 10px; 
-    background-repeat: no-repeat;
-    padding: 12px 20px 12px 40px;
-    -webkit-transition: width 0.4s ease-in-out;
-    transition: width 0.2s ease-in-out;
-}
-
-input[type=text]:focus {
-    width: 100%;
-}
+    
   </style>
 
 </head>
 <body>
-  <div class="container"></div>
+  <div class="container">
+    <div class="container-fluid content">
   <div class="image"></div>
-  <div class="row">
-    <div class="col-md-4"></div>
-
-    <div class="col-md-4"></div>
-  </div>
   <nav class="navbar navbar-inverse navbar-fixed-top">
     <div class="container">
       <div class="navbar-header">
@@ -76,7 +55,6 @@ input[type=text]:focus {
           <li><a href="contact.php">Contact</a></li>
         </ul>
         <ul class="nav navbar-nav navbar-right">
-          <li><a href="index.php"></a>Profile</li>          <!--Work on this-->
           <li><a href="logout.php">Logout</a></li>
         </ul>
       </div>
@@ -93,23 +71,25 @@ input[type=text]:focus {
       </b></h1>
     </div>
   </div>
-  <div>
-    <div class="col-md-6"><h1>Actions</h1></div><br>
     <form action="action_search.php" method="POST">
       <div class="form-group row">
         <div class="form-group col-md-6">
+          <div class="col-md-6"><h1><u>Actions</u></h1></div>
+          <br><br><br><br><br>
           <label for="search">Search:</label>
-            <input type="text" name="search" placeholder="XXXXXX">
+            <font color="black">
+              <input type="text" name="search" placeholder="XXXXXX">
+            </font>
         </div>
       </div>
-      <br><br>
+      <br>
         <div class="col-md-12">
           <button type="submit" class="btn btn-primary" style="color: black;">Submit</button>
         </div>
     </form>
-    <br><br>
-    <h1>OR</h1>
-    <br><br>
+    <br><br><br>
+    <h2>OR</h2>
+    <br>
     <form action="action_filters.php" method="POST">
       <div class="form-group row">
         <div class="form-group col-md-6">
@@ -137,7 +117,7 @@ input[type=text]:focus {
   </div>
   </div>
   </div>
-
+  </div>
   <script src="https://code.jquery.com/jquery-2.1.4.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 </body>
