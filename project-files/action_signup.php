@@ -16,7 +16,7 @@ $qry2 = "SELECT * from `fbi-users` WHERE agentid=$agentid";
 $qry = "INSERT INTO `fbi-users` (`first-name`, `last-name`, `agentid`, `dept`, `password`,`admin`) VALUES ('$firstName', '$lastName', '$agentid', '$dept', '$password', '$admin');";
 $result = mysqli_num_rows($qry2);
 
-if(mysqli_query($con,$qry) && $resul!=0){
+if(mysqli_query($con,$qry) && $result!=0){
 	session_start();
 $_SESSION['message'] = "Successfully Registered! Now you can login!";
    header("location:login.php");
@@ -24,7 +24,7 @@ $_SESSION['message'] = "Successfully Registered! Now you can login!";
 else if(mysqli_query($con,$qry) && $result==0){
 	session_start();
 	$_SESSION['message'] = "<br>Sorry Agent ".$firstName." you will have to try again! The ID you have entered already exists.";
-	header("location:signup.php");	
+	header("location:signup.php");
 }
 
 ?>
