@@ -33,12 +33,8 @@
 
 </head>
 <body>
-	<div class="container"></div>
 	<div class="image"></div>
-	<div class="row">
-	</div>
 	<nav class="navbar navbar-inverse navbar-fixed-top">
-		<div class="container">
 			<div class="navbar-header">
 				 <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-nav-demo" aria-expanded="false">
 	        <span class="sr-only">Toggle navigation</span>
@@ -57,7 +53,6 @@
 					<li><a href="login.php">Login</a></li>
 				</ul>
 			</div>
-		</div>
 	</nav>
 
   <div class="container">

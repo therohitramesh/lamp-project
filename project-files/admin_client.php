@@ -42,7 +42,7 @@
 
   <?php
   session_start();
-  if(!isset($_SESSION['admin'])){
+  if(!isset($_SESSION['user'])){
     $_SESSION["message"]="Your session has expired";
     header("location:login.php");
   }
@@ -87,7 +87,7 @@
 
     <br>
     <h1>Delete Record:</h1>
-    <form action="admin_del.php">
+    <form action="action_delete.php">
       <button type="submit" value="Del" style="color: black;">Delete</button>
 
     </form>
@@ -158,10 +158,10 @@
     <div class="col-md-4" style="text-align: center; color: green">
     <?php
     session_start();
-    if(isset($_SESSION['msg']))
+    if(isset($_SESSION['message']))
     {
-      echo $_SESSION['msg'];
-      unset($_SESSION['msg']);
+      echo $_SESSION['message'];
+      unset($_SESSION['message']);
     }
     ?>
     </div>

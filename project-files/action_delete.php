@@ -5,21 +5,18 @@ $con=mysqli_connect("127.0.0.1","root","mynameisrohit","fbi")or
 
 $crimid = $_POST['crimid'];
 
-$qry = "SELECT * FROM `fbi-criminals` WHERE crimid='$crimid'";
+$qry = "SELECT * FROM `fbi-criminals` WHERE criminalid=$crimid";
 
-if(mysqli_query($con,$qry) && $qry != 0){
+if(mysqli_query($con,$qry)){
 	session_start();
-
-$del = "DELETE FROM `fbi-criminals` WHERE crimid=$crimid";
-mysqli_query($del);
-
-	header("location:search_results.php");
+	$del = "DELETE FROM `fbi-criminals` WHERE criminalid=$crimid";
+	mysqli_query($con,$del);
+	$_SESSION['message'] = "Record deleted!";
+	header("location:admin_client.php");
 }
-else if(mysqli_query($con,$qry) || $qry == 0){
+else{
 	session_start();
 	$_SESSION['msg'] = "Record not found. Try again.";
 	header("location:delete_record.php");
 }
-
-
 ?>
