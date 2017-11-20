@@ -19,7 +19,7 @@ $admin = $temp['admin'];
 if($count == 0)
 {
 	 session_start();
-	 $_SESSION["message"]="Invalid Agent ID or Password";
+	 $_SESSION["msg"]="Invalid Agent ID or Password";
 	 header("location:login.php");
 }
 else

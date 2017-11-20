@@ -26,11 +26,17 @@
     .navbar-inverse .navbar-nav>li>a {
       color: white;
     }
-    input.transparent-input{
+    .input.transparent-input{
        background-color:transparent !important;
        border:none !important;
     }
-    
+    .sizer{
+      font-size: 18px;
+      font-weight: lighter;
+    }
+
+
+
   </style>
 
 </head>
@@ -38,7 +44,7 @@
   <?php 
   session_start();
   if(!isset($_SESSION['user'])){
-    $_SESSION["message"]="Your session has expired";
+    $_SESSION["msg"]="Your session has expired";
     header("location:login.php");
   }
 ?>
@@ -70,62 +76,75 @@
 
   <div class="container">
   <div class="header">
-    <div class="col-md-12">
-      <h1><b>
-        <?php
-          echo "Hello, Agent".$_SESSION['name']."!";
-        ?>
-      </b></h1>
-    </div>
+    <h1>Client</h1>
   </div>
+
+  <div class="body">
     <form action="action_search.php" method="POST">
       <div class="form-group row">
         <div class="form-group col-md-6">
-          <div class="col-md-6"><h1><u>Actions</u></h1></div>
-          <br><br><br><br><br>
+
+          <h1>
           <label for="search">Search:</label>
+          </h1>
+          <h3>(By ID or name)</h3>
             <font color="black">
               <input type="text" name="search" placeholder="XXXXXX">
             </font>
         </div>
       </div>
+      <h2>OR</h2>
+      <div class="form-group row">
+        <div class="form-group col-md-12">
+          <label for="pass"><h3>Area:</h3></label><br>
+
+            <input type="radio" name="ichch" value ="ichch"><b class="sizer">Ichchanath</b>
+            <input type="radio" name="athwa" value="athwa"><b class="sizer">Athwa</b>
+            <input type="radio" name="vesu" value="vesu"><b class="sizer">Vesu</b>
+
+        </div>
+      </div>
+
+      <div class="form-group row">
+        <div class="form-group col-md-12">
+
+          <label for="pass"><h3>Crime:</h3></label><br>
+            <input type="radio" name="robb" value="robb"><b class="sizer">Robbery</b>
+            <input type="radio" name="kid" value ="kid"><b class="sizer">Kidnapping</b>
+            <input type="radio" name="smug" value="smug"><b class="sizer">Smuggling</b>
+        </div>
+      </div>
+
+      <div class="form-group row">
+        <div class="form-group col-md-12">
+          <label for="pass"><h3>Year:</h3></label><br>
+            <input type="radio" name="2017" value="2017"><b class="sizer">2017</b>
+            <input type="radio" name="2015" value="2016"><b class="sizer">2016</b>
+            <input type="radio" name="2016" value="2015"><b class="sizer">2015</b>
+            <input type="radio" name="2014" value="2014"><b class="sizer">2014</b>
+            <input type="radio" name="2013" value="2013"><b class="sizer">2013</b>
+            <input type="radio" name="2012" value="2012"><b class="sizer">2012</b>
+            <input type="radio" name="2011" value="2011"><b class="sizer">2011</b>
+            <input type="radio" name="2010" value="2010"><b class="sizer">2010</b>
+            <input type="radio" name="2009" value="2009"><b class="sizer">2009</b>
+            <input type="radio" name="2008" value="2008"><b class="sizer">2008</b>
+        </div>
+      </div>
+
       <br>
         <div class="col-md-12">
           <button type="submit" class="btn btn-primary" style="color: black;">Submit</button>
         </div>
     </form>
-    <br><br><br>
-    <h2>OR</h2>
     <br>
-    <form action="action_filters.php" method="POST">
-      <div class="form-group row">
-        <div class="form-group col-md-6">
-          <label for="pass"><h3>Other filters:</h3></label><br>
-            <input type="radio" name="crime_comm" value="crime_comm">Crime committed
-            <input type="radio" name="area" value ="area">Area
-            <input type="radio" name="year" value="year">Year
-        </div>
-      </div>
-        <br><br>
-        <div class="col-md-12">
-          <button type="submit" class="btn btn-primary" style="color: black;">Submit</button>
-        </div>
-    </form>
-    <div class="col-md-4" style="text-align: center; color: green">
-    <?php
-    session_start();
-    if(isset($_SESSION['msg']))
-    {
-      echo $_SESSION['msg'];
-      unset($_SESSION['msg']);
-    }
-    ?>
-    </div>
+    <br>
+    <br>
+    <br>
   </div>
   </div>
-  </div>
-  </div>
-  <script src="https://code.jquery.com/jquery-2.1.4.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
+
+ <!--  <script src="https://code.jquery.com/jquery-2.1.4.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script> -->
 </body>
 </html>

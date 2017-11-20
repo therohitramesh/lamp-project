@@ -88,12 +88,21 @@
   		  	<button type="submit" class="btn btn-primary" style="color: black;">Log In</button>
   		  </div>
 		</form>
-		<div class="col-md-4" style="text-align: center; color: red"><?php
+		<div class="col-md-4" style="text-align: center; color: green"><?php
 		session_start();
 		if(isset($_SESSION['message']))
 		{
 			echo $_SESSION['message'];
 			unset($_SESSION['message']);
+		}
+		?>
+		</div>
+		<div class="col-md-4" style="text-align: center; color: red"><?php
+		session_start();
+		if(isset($_SESSION['msg']))
+		{
+			echo $_SESSION['msg'];
+			unset($_SESSION['msg']);
 		}
 		?>
 		</div>
