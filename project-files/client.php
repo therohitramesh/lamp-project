@@ -35,6 +35,13 @@
 
 </head>
 <body>
+  <?php 
+  session_start();
+  if(!isset($_SESSION['user'])){
+    $_SESSION["message"]="Your session has expired";
+    header("location:login.php");
+  }
+?>
   <div class="container">
     <div class="container-fluid content">
   <div class="image"></div>

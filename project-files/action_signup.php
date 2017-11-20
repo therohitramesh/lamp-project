@@ -14,18 +14,17 @@ $admin = 0;
 $qry2 = "SELECT * from `fbi-users` WHERE agentid=$agentid";
 
 $qry = "INSERT INTO `fbi-users` (`first-name`, `last-name`, `agentid`, `dept`, `password`,`admin`) VALUES ('$firstName', '$lastName', '$agentid', '$dept', '$password', '$admin');";
+$result = mysqli_num_rows($qry2);
 
-if(mysqli_query($con,$qry) && $qry != 0){
+if(mysqli_query($con,$qry) && $resul!=0){
 	session_start();
-$_SESSION['msg'] = "Successfully Registered! Now you can login!";
+$_SESSION['message'] = "Successfully Registered! Now you can login!";
    header("location:login.php");
 }
-else if(mysqli_query($con,$qry) && $qry == 0){
+else if(mysqli_query($con,$qry) && $result==0){
 	session_start();
-	$_SESSION['msg'] = "<br>Sorry Agent ".$firstName." you will have to try again!";
-	$url='signup.php';
-   echo '<META HTTP-EQUIV=REFRESH CONTENT="1; '.$url.'">';
-	
+	$_SESSION['message'] = "<br>Sorry Agent ".$firstName." you will have to try again! The ID you have entered already exists.";
+	header("location:signup.php");	
 }
 
 ?>

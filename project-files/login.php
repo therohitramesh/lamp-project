@@ -8,7 +8,6 @@
 		<link rel="fav icon" href="images/FBIicon.ico" type="image/x-icon">
 		  <link rel="stylesheet" href="css/style.css">
 		  <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
-		  <link rel="stylesheet" type="text/css" src="fonts//home/rohitramesh/version-control/lamp-project/project-files/fonts/TypoWriter Light Demo.otf">
   <style type="text/css">
     body{
     	color: white;
@@ -64,7 +63,6 @@
 			</div>
 		</div>
 	</nav>
-
   <div class="container">
 	<div class="header">
 		<div class="col-md-12">
@@ -92,10 +90,10 @@
 		</form>
 		<div class="col-md-4" style="text-align: center; color: red"><?php
 		session_start();
-		if(isset($_SESSION['msg']))
+		if(isset($_SESSION['message']))
 		{
-			echo $_SESSION['msg'];
-			unset($_SESSION['msg']);
+			echo $_SESSION['message'];
+			unset($_SESSION['message']);
 		}
 		?>
 		</div>

@@ -84,16 +84,14 @@
 <?php
       $con= mysqli_connect("127.0.0.1","root","mynameisrohit","fbi")or     die("Could not connect: " . mysql_error());
 
-      $criminalid = [`criminalid`];
+      $criminalid = $_POST['criminalid'];
 
       $sql="SELECT * FROM `fbi-criminals` WHERE `criminalid`=$criminalid";
-
-
-      $result=mysqli_query($con,$sql);
+		
+		$result=mysqli_query($con,$sql);
       
-      while($temp = mysqli_fetch_array( $result ))
+      while($temp = mysqli_fetch_array($result))
       {
-        $link = "http://localhost/lamp-project/project-files/.php/?event=";
         $criminalid = $temp['crimnalid'];
         $name = $temp['name'];
         $crime_comm = $temp['crime-comm'];
@@ -101,18 +99,27 @@
         $year = $temp['year'];
         $src = $temp['img'];
 
-        echo "<div class='col-md-12'>
-        		<div class='row'>
-        			<img class=criminalimg src=$src alt='criminal image' style='float:left;'></img>
-        			<div class='info'>
-        				Criminal ID : $crminalid<br>
-        				Name : $name<br>
-        				Crime Committed : $crime_comm<br>
-        				Area : $area<br>
-        				Year : $year<br>
-      				</div>
-      			</div>
-      		</div>"
+        // // echo "<div class='row'>"
+        // echo "<div class='col-lg-4 col-sm-6' style="float:left"><p><img src='$src'  alt = 'pic'></img>";
+        // echo "<br>";
+        echo "NAME: ".$name;
+        echo "ID: ".$criminalid;
+
+
+
+
+        // echo "<div class='col-md-12'>
+        // 		<div class='row'>
+        // 			<img class=criminalimg src=$src alt='criminal image' style='float:left;'></img>
+        // 			<div class='info'>
+        // 				Criminal ID : $crminalid<br>
+        // 				Name : $name<br>
+        // 				Crime Committed : $crime_comm<br>
+        // 				Area : $area<br>
+        // 				Year : $year<br>
+      		// 		</div>
+      		// 	</div>
+      		// </div>"
       }
 ?>
 </div>
