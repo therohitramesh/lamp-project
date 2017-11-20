@@ -9,21 +9,22 @@ $crime = $_POST['crime'];
 $year = $_POST['year'];
 
 
+$qry2 = "SELECT * from `fbi-criminals` WHERE criminalid=$crimid";
 
-$qry2 = "SELECT * from `fbi-criminals` WHERE crimid="$crimid";
-$qry = "INSERT INTO `fbi-criminals` (`name`, `crimid`, `area`, `crime`, `year`) VALUES ('$name', '$crimid', '$area', '$crime', '$year');";
-$result = mysqli_num_rows($qry2);
+$result = mysqli_num_rows(mysqli_query($con,$qry2));
 
-if(mysqli_query($con,$qry) && $result!=0){
+if($result==0){
 	session_start();
-$_SESSION['message'] = "Successfully added record!";
-   header("location:admin_client.php");
+	$qry = "INSERT INTO `fbi-criminals` (`name`, `criminalid`, `area`, `crime-comm`, `year`) VALUES ('$name', '$crimid', '$area', '$crime', '$year');";
+	$con->query($qry);
+	$_SESSION['message'] = "Successfully added record!";
+	header("location:admin_client.php");
+	
 }
-else if(mysqli_query($con,$qry) && $result==0){
+else if($result!=0){
 	session_start();
 	$_SESSION['message'] = "<br>Sorry agent, you will have to try again! The ID you have entered already exists.";
-	header("location:new_record.php");
-
+	header("location:new_record.php");	
 }
 
 ?>
