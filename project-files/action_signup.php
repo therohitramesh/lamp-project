@@ -9,24 +9,14 @@ $dept = $_POST['dept'];
 $password = $_POST['password'];
 $admin = 0;
 
-// $qry = "insert into studentdb(enrol,name) values(".$_POST['txtname'].",'".$_POST['txtname']."')";
-
 $qry2 = "SELECT * from `fbi-users` WHERE agentid=$agentid";
 $result = mysqli_num_rows(mysqli_query($con,$qry2));
 
-<<<<<<< HEAD
 if($result==0){
-||||||| merged common ancestors
 $qry = "INSERT INTO `fbi-users` (`first-name`, `last-name`, `agentid`, `dept`, `password`,`admin`) VALUES ('$firstName', '$lastName', '$agentid', '$dept', '$password', '$admin');";
 $result = mysqli_num_rows($qry2);
 
-if(mysqli_query($con,$qry) && $resul!=0){
-=======
-$qry = "INSERT INTO `fbi-users` (`first-name`, `last-name`, `agentid`, `dept`, `password`,`admin`) VALUES ('$firstName', '$lastName', '$agentid', '$dept', '$password', '$admin');";
-$result = mysqli_num_rows($qry2);
-
-if(mysqli_query($con,$qry) && $result!=0){
->>>>>>> 4cc8ad6132647637446d8094e41f4356cfe5d26c
+if($result==0){
 	session_start();
 	$qry = "INSERT INTO `fbi-users` (`first-name`, `last-name`, `agentid`, `dept`, `password`,`admin`) VALUES ('$firstName', '$lastName', '$agentid', '$dept', '$password', '$admin');";
 	$con->query($qry);
