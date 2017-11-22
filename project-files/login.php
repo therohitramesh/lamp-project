@@ -33,13 +33,7 @@
 
 </head>
 <body>
-	<div class="container"></div>
 	<div class="image"></div>
-	<div class="row">
-		<div class="col-md-4"></div>
-
-		<div class="col-md-4"></div>
-	</div>
 	<nav class="navbar navbar-inverse navbar-fixed-top">
 		<div class="container">
 			<div class="navbar-header">
@@ -49,7 +43,7 @@
 	        <span class="icon-bar"></span>
 	        <span class="icon-bar"></span>
 	      </button>
-				<a href="index.php" class="navbar-brand"><span class="glyphicon glyphicon-picture"></span> FBI</a>
+				<a href="index.php" class="navbar-brand">FBI</a>
 			</div>
 			<div class="collapse navbar-collapse" id="bs-nav-demo">
 				<ul class="nav navbar-nav">
@@ -57,13 +51,13 @@
 					<li><a href="contact.php">Contact</a></li>
 				</ul>
 				<ul class="nav navbar-nav navbar-right">
-					<li><a href="admin_login.php">Admin Login</a></li>
-					<li><a href="login.php">Login</a></li>
+					<li><a href="signup.php">Register</a></li>
 				</ul>
 			</div>
 		</div>
 	</nav>
   <div class="container">
+  	<div class="container-fluid content">
 	<div class="header">
 		<div class="col-md-12">
 			<h1><b>Log In</b></h1>
@@ -105,10 +99,11 @@
 			unset($_SESSION['msg']);
 		}
 		?>
+		<br><br><br>
 		</div>
 	</div>
 	</div>
-  </div>
+	</div>
 
 	<!-- <script src="https://code.jquery.com/jquery-2.1.4.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script> -->

@@ -16,14 +16,15 @@ if($result==0){
 	session_start();
 	$qry = "INSERT INTO `fbi-criminals` (`criminalid`, `name`, `crime-comm`, `area`, `year`) VALUES ('$crimid', '$name', '$crime', '$area', '$year');";
 if (mysqli_query($con, $qry)) {
-    echo "New record created successfully";
+    $_SESSION['msg'] = "<br>Record added.";
+	header("location:admin_client.php");	
 } else {
     echo "Error: " . $sql . "<br>" . mysqli_error($conn);
 }
 }
 else if($result!=0){
 	session_start();
-	$_SESSION['msg'] = "<br>Sorry agent, you will have to try again! The ID you have entered already exists.";
+	$_SESSION['message'] = "<br>Sorry agent, you will have to try again! The ID you have entered already exists.";
 	header("location:new_record.php");	
 }
 

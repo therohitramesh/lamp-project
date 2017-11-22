@@ -39,6 +39,13 @@
 </head>
 
 <body>
+  <?php 
+  session_start();
+  if(!isset($_SESSION['user'])){
+    $_SESSION["msg"]="Your session has expired";
+    header("location:login.php");
+  }
+?>
   <div class="container"></div>
 	<div class="image"></div>
 	<div class="row">
@@ -63,8 +70,7 @@
 					<li><a href="contact.php">Contact</a></li>
 				</ul>
 				<ul class="nav navbar-nav navbar-right">
-					<li><a href="admin_login.php">Admin Login</a></li>
-					<li><a href="login.php">Login</a></li>
+					<li><a href="logout.php">Logout</a></li>
 				</ul>
 			</div>
 		</div>

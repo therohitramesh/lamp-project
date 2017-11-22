@@ -36,10 +36,11 @@
 		width: 350px;
 		height: 250px;
 		background-color: rgba(0, 0, 0, 0.0);
-
+		color: white;
 		}
 
 		.center {
+			text-decoration: none !important;
 			text-align: center;
 		}
   </style>
@@ -71,6 +72,7 @@
 				</ul>
 				<ul class="nav navbar-nav navbar-right">
 					<li><a href="login.php">Login</a></li>
+					<li><a href="signup.php">Register</a></li>
 				</ul>
 			</div>
 		</div>
@@ -84,14 +86,14 @@
 				<h1>FBI</h1>
 				<p>What would you like to do?</p>
 
-				<p class="center">
+				<p class="center" >
 				  	<a href="login.php"><button type="button" class="btn norm">Log In</button></a>
 					<a href="signup.php"><button type="button" class="btn norm">Register</button></a>
-					<button type="button" class="btn norm">HQ</button>
+					<a href="hq.php"><button type="button" class="btn norm">HQ</button></a>
 				</p>
 				<p class="center">
 				  	<a href="contact.php"><button type="button" class="btn norm">Contact Us</button></a>
-					<a href="created.php"><button type="button" class="btn norm">Created By</button></a>
+					<a href="createdby.php"><button type="button" class="btn norm">Created By</button></a>
 					<a href="about.php"><button type="button" class="btn norm">About Us</button></a>
 				</p>
 			</div>

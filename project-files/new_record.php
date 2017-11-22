@@ -34,6 +34,13 @@
 
 </head>
 <body>
+	<?php 
+  session_start();
+  if(!isset($_SESSION['user'])){
+    $_SESSION["msg"]="Your session has expired";
+    header("location:login.php");
+  }
+?>
 	<div class="container"></div>
 	<div class="image"></div>
 	<div class="row">
@@ -55,7 +62,8 @@
 					<li><a href="contact.php">Contact</a></li>
 				</ul>
 				<ul class="nav navbar-nav navbar-right">
-					<li><a href="login.php">Login</a></li>
+					<li><a href="admin_client.php">Profile</a></li>
+					<li><a href="login.php">Logout</a></li>
 				</ul>
 			</div>
 		</div>
@@ -80,16 +88,16 @@
 	      	<input type="text" name="crimid" id="crimid" required placeholder="XXXXXX" class="form-control" pattern=".{5,10}" title="5 to 10 characters">
 		  </div>
 	      <div class="form-group col-md-6">
-		    <label for="agentid">Area: (Ichchanath/Vesu/Athwa)</label>
-      		<input type="text" name="area" id="area" required placeholder="Athwa" class="form-control" maxlength="6">
+		    <label for="agentid">Area:</label>
+      		<input type="text" name="area" id="area" required placeholder="Athwa" class="form-control" maxlength="15">
 		  </div>
 		  <div class="form-group col-md-6">
-		    <label for="dept">Crime: (Robbery/Kidnapping/Smuggling)</label>
+		    <label for="dept">Crime:</label>
       		<input type="text" name="crime" id="crime" required placeholder="Robbery" class="form-control">
 		  </div>
 		  <div class="form-group col-md-6">
-		    <label for="pass">Year: (2008-2017)</label>
-		    <input type="text" class="form-control" id="year" name="year" required placeholder="2017">
+		    <label for="pass">Year:</label>
+		    <input type="text" class="form-control" id="year" name="year" required placeholder="YYYY">
 		  </div>
 
   		  <br><br><br>
@@ -99,10 +107,10 @@
 		</form>
 		<div class="col-md-4" style="text-align: center; color: red"><?php
 		session_start();
-		if(isset($_SESSION['msg']))
+		if(isset($_SESSION['message']))
 		{
-			echo $_SESSION['msg'];
-			unset($_SESSION['msg']);
+			echo $_SESSION['message'];
+			unset($_SESSION['message']);
 		}
 		?>
 		<br>
